@@ -10,6 +10,15 @@ v-app
         | {{ title }}
   v-dialog(v-model="dialog", fullscreen, hide-overlay, scrollable)
     v-card
+      v-btn.mt-n4.mr-n4.btn-close(
+        @click="dialog = false",
+        color="red",
+        icon,
+        absolute,
+        top,
+        right
+      )
+        v-icon fas fa-times
       v-card-text
         component(:is="chartSelected")
 </template>
@@ -70,5 +79,8 @@ body {
 }
 .h-100 {
   height: 100%;
+}
+.btn-close {
+  z-index: 999;
 }
 </style>

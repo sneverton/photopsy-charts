@@ -107,6 +107,9 @@ export default Vue.extend({
           type: "datetime",
           categories: this.xAxis[i],
         },
+        markers: {
+          size: 3,
+        },
       });
     },
   },

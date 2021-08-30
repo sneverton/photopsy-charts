@@ -76,6 +76,9 @@ export default Vue.extend({
           type: "categories",
           categories: this.xAxis,
         },
+        markers: {
+          size: 3,
+        },
       };
     },
     height() {

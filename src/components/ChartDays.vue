@@ -66,6 +66,9 @@ export default Vue.extend({
           type: "datetime",
           categories: this.xAxis,
         },
+        markers: {
+          size: 3,
+        },
       };
     },
   },

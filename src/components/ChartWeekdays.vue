@@ -1,5 +1,5 @@
 <template lang="pug">
-apexchart(type="line", height="100%", :options="chartOptions", :series="series")
+apexchart(type="bar", height="100%", :options="chartOptions", :series="series")
 </template>
 
 <script lang="ts">
@@ -38,11 +38,15 @@ export default Vue.extend({
 
           return r;
         }, [])
-        .map((days: Day[]) =>
-          days
+        .map((days: Day[]) => {
+          let q = days
             .map(({ quant }) => quant)
-            .reduce((r: number, quant: number) => (r += quant), 0)
-        );
+            .reduce((r: number, quant: number) => (r += quant), 0);
+
+          q = (q / symptomsInterval.quant) * 100;
+
+          return q.toPrecision(2);
+        });
     },
     series() {
       return [
@@ -59,7 +63,7 @@ export default Vue.extend({
           offsetY: 20,
         },
         chart: {
-          type: "line",
+          type: "bar",
           height: "100%",
         },
         dataLabels: {

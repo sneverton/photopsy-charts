@@ -54,7 +54,7 @@ export default Vue.extend({
         },
         stroke: {
           curve: "straight",
-          width: 3,
+          width: 2,
         },
         grid: {
           row: {

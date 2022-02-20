@@ -38,8 +38,13 @@ export default Vue.extend({
 
           return r;
         }, [])
-        .map((hour) => hour.reduce((r, { quant }) => r + quant, 0))
-        .map((quant) => quant);
+        .map((hour) => {
+          let quant = hour.reduce((r, { quant }) => r + quant, 0);
+          quant = (quant / symptomsInterval.quant) * 100;
+
+          return quant.toPrecision(2);
+          // return parseInt(quant.toString());
+        });
     },
     series() {
       return [

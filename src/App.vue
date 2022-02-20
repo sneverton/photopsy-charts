@@ -28,7 +28,7 @@ import Vue from "vue";
 import ChartDays from "./components/ChartDays.vue";
 import ChartHour from "./components/ChartHour.vue";
 import ChartWeekdays from "./components/ChartWeekdays.vue";
-import ChartDaysAWeek from "./components/ChartDaysAWeek.vue";
+import ChartChangeRateDays from "./components/ChartChangeRateDays.vue";
 
 export default Vue.extend({
   data: () => ({
@@ -40,16 +40,16 @@ export default Vue.extend({
         component: "ChartDays",
       },
       {
-        title: "FOTOPSIAS POR DIA POR HORA",
+        title: "TAXA DE VARIAÇÃO DE FOTOPSIAS POR DIA",
+        component: "ChartChangeRateDays",
+      },
+      {
+        title: "FOTOPSIAS POR HORA",
         component: "ChartHour",
       },
       {
-        title: "FOTOPSIAS POR DIA POR SEMANA",
+        title: "FOTOPSIAS POR DIA DA SEMANA",
         component: "ChartWeekdays",
-      },
-      {
-        title: "FOTOPSIAS POR DIA POR SEMANA",
-        component: "ChartDaysAWeek",
       },
     ],
   }),
@@ -63,7 +63,7 @@ export default Vue.extend({
     ChartDays,
     ChartHour,
     ChartWeekdays,
-    ChartDaysAWeek,
+    ChartChangeRateDays,
   },
 });
 </script>
